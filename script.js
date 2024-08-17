@@ -1,9 +1,9 @@
 // Assuming your images are named image1.jpg, image2.jpg, ..., image365.jpg
-const totalImages = 365; // Total number of images
+const totalImages = 110; // Total number of images
 
 function getRandomImage() {
     const randomIndex = Math.floor(Math.random() * totalImages) + 1;
-    const imagePath = `https://yourusername.github.io/your-repository-name/image${randomIndex}.jpg`; // Update this line
+    const imagePath = `https://hinal150198.github.io/random-image-generator/image${randomIndex}.jpg`; // Update this line
     document.getElementById('randomImage').src = imagePath;
 }
 
