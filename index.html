@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Image Generator</title>
     <style>
-        /* Ensure the body takes up the full height of the screen */
+        /* Center the image and set the width */
         body {
-            margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* Optional: light background color */
+            height: 100vh;
+            margin: 0;
         }
-
-        /* Center and size the image */
-        #randomImage {
+        img {
             max-width: 500px;
-            width: 100%; /* Ensures image scales down if screen is smaller */
+            width: 100%;
             height: auto;
         }
     </style>
 </head>
 <body>
-    <img id="randomImage" src="" alt="Random Image">
-    <script src="scripts/script.js"></script>
+    <img id="randomImage" alt="Random Image">
+    <script src="script.js"></script> <!-- Ensure the path to your JS file is correct -->
 </body>
 </html>
