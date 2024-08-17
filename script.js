@@ -1,12 +1,11 @@
-// Step 1: Set the total number of images
-const totalImages = 110;
+// Assuming your images are named image1.jpg, image2.jpg, ..., image365.jpg
+const totalImages = 365; // Total number of images
 
-// Step 2: Function to generate a random image
-function showRandomImage() {
-    const randomIndex = Math.floor(Math.random() * totalImages) + 1; // Generate a random number between 1 and 365
-    const imagePath = `${randomIndex}.jpg`; // Construct the path to the image
-    document.getElementById('randomImage').src = imagePath; // Set the image source
+function getRandomImage() {
+    const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+    const imagePath = `https://yourusername.github.io/your-repository-name/image${randomIndex}.jpg`; // Update this line
+    document.getElementById('randomImage').src = imagePath;
 }
 
-// Step 3: Automatically display a random image when the page loads
-window.onload = showRandomImage;
+// Call the function when the page loads
+window.onload = getRandomImage;
