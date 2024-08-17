@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <style>
+        /* Ensure the body takes up the full height of the screen */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Optional: light background color */
+        }
+
+        /* Center and size the image */
+        #randomImage {
+            max-width: 500px;
+            width: 100%; /* Ensures image scales down if screen is smaller */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img id="randomImage" src="" alt="Random Image">
+    <script src="scripts/script.js"></script>
+</body>
+</html>
