@@ -5,24 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Image Generator</title>
     <style>
-        /* Center the image on the screen */
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 200vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
+
         img {
             max-width: 600px;
             width: 100%;
             height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #instagramBtn {
+            background-color: #E1306C;
+            color: white;
+        }
+
+        #instagramBtn:hover {
+            background-color: #c1225a;
+        }
+
+        #newFactBtn {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #newFactBtn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <img id="randomImage" alt="Random Image">
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <div class="button-container">
+        <button id="instagramBtn">Follow on Instagram</button>
+        <button id="newFactBtn">New Fact</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
