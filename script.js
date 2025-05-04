@@ -1,4 +1,4 @@
-const totalImages = 15; // Update with the correct number of images
+const totalImages = 18; // Update with the correct number of images
 
 function getRandomImage() {
     const randomIndex = Math.floor(Math.random() * totalImages) + 1;
