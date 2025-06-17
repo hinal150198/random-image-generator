@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000; /* black background */
+      background-color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -18,34 +18,49 @@
     }
 
     img {
-      width: 95vw;       /* Almost full screen width */
-      max-width: 500px;  /* Cap for larger screens */
+      width: 90vw;
+      max-width: 800px;     /* Bigger max width for desktops */
       height: auto;
-      border-radius: 5px;
+      border-radius: 10px;
       margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 12px;
       width: 90%;
       max-width: 400px;
     }
 
     button {
+      width: 100%;
       padding: 14px;
       font-size: 16px;
       border: none;
-      border-radius: 3px;
-      background-color: #ccc; /* grey button (change to #fff for white) */
+      border-radius: 8px;
+      background-color: #ccc; /* Change to #fff for white */
       color: #000;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
     button:hover {
-      background-color: #aaa; /* darker grey on hover */
+      background-color: #aaa;
+    }
+
+    @media (min-width: 768px) {
+      .button-container {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      button {
+        width: auto;
+        min-width: 180px;
+      }
     }
   </style>
 </head>
