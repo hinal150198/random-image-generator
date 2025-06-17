@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Generator</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #FFFFFF;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Image Generator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        img {
-            max-width: 700px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
+    body {
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
 
-        .button-container {
-            display: flex;
-            gap: 15px;
-        }
+    #randomImage {
+      width: 100vw;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
 
-        button {
-            padding: 10px 12px;
-            font-size: 15px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+    }
 
-        #instagramBtn {
-            background-color: #000000;
-            color: white;
-        }
+    button {
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      transition: background-color 0.3s ease;
+    }
 
-        #instagramBtn:hover {
-            background-color: #4C4C4C;
-        }
+    #instagramBtn {
+      background-color: #E1306C;
+      color: white;
+    }
 
-        #newFactBtn {
-            background-color: #000000;
-            color: white;
-        }
+    #instagramBtn:hover {
+      background-color: #c1225a;
+    }
 
-        #newFactBtn:hover {
-            background-color: #4C4C4C;
-        }
-    </style>
+    #newFactBtn {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    #newFactBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <img id="randomImage" alt="Random Image">
-    <div class="button-container">
-        <button id="instagramBtn">Follow on Instagram</button>
-        <button id="newFactBtn">Learn New Fact</button>
-    </div>
+  <img id="randomImage" alt="Random Image" />
+  <div class="button-container">
+    <button id="instagramBtn">Follow on Instagram</button>
+    <button id="newFactBtn">New Fact</button>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
