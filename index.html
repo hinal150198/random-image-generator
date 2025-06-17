@@ -66,3 +66,25 @@
 
     function darkenColor(rgbArray, factor = 0.6) {
       return rgbArray.map(channel => Math.floor(channel * factor));
+    }
+
+    function setBackgroundFromImage() {
+      if (image.complete) {
+        try {
+          const dominantColor = colorThief.getColor(image);
+          const darkColor = darkenColor(dominantColor);
+          document.body.style.backgroundColor = `rgb(${darkColor.join(',')})`;
+        } catch (e) {
+          console.error("ColorThief error:", e);
+          document.body.style.backgroundColor = "black"; // fallback
+        }
+      } else {
+        image.addEventListener('load', setBackgroundFromImage);
+      }
+    }
+
+    image.src = getRandomImage();
+    image.addEventListener('load', setBackgroundFromImage);
+  </script>
+</body>
+</html>
