@@ -83,10 +83,19 @@
       box-shadow: 0 4px 20px rgba(216,90,138,0.4), 0 2px 6px rgba(0,0,0,0.4);
     }
 
-    #newFactBtn:hover {
-      background: #E8709A;
-      box-shadow: 0 6px 28px rgba(216,90,138,0.55), 0 2px 8px rgba(0,0,0,0.4);
-    }
+  /* Before — pink on hover, breaks on mobile */
+#newFactBtn:hover {
+  background: #E8709A;
+  box-shadow: 0 6px 28px rgba(216,90,138,0.55), 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* After — only applies hover style on real pointer devices (mouse/trackpad) */
+@media (hover: hover) {
+  #newFactBtn:hover {
+    background: #c9d03c;
+    box-shadow: 0 6px 28px rgba(179,185,52,0.45), 0 2px 8px rgba(0,0,0,0.4);
+  }
+}
 
     #newFactBtn:active {
       transform: scale(0.96);
