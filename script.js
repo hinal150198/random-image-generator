@@ -1,12 +1,18 @@
 const totalImages = 39;
+let currentIndex = null;
 
 function getRandomImage() {
   const img = document.getElementById('randomImage');
-  const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * totalImages) + 1;
+  } while (randomIndex === currentIndex);
+
+  currentIndex = randomIndex;
   img.src = `https://hinal150198.github.io/random-image-generator/${randomIndex}.jpg`;
-  // Replay fade-in animation on each new fact
   img.style.animation = 'none';
-  img.offsetHeight; // force reflow
+  img.offsetHeight; // force reflow so fade-in replays
   img.style.animation = '';
 }
 
