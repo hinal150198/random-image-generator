@@ -2,180 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>fact.o.frame</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&family=Outfit:wght@400;500&family=Playpen+Sans:wght@600&display=swap" rel="stylesheet">
+  <!-- Old printed QR codes point here; send them to the deck, which opens on a random fact. -->
+  <meta http-equiv="refresh" content="0; url=https://factoframe.vercel.app/" />
+  <link rel="canonical" href="https://factoframe.vercel.app/" />
+  <script>location.replace("https://factoframe.vercel.app/");</script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      min-height: 100vh;
-      background-color: #111010;
-      background-image:
-        radial-gradient(ellipse at 20% 10%, rgba(220,90,140,0.06) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 90%, rgba(220,90,140,0.04) 0%, transparent 50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 20px 36px;
-      font-family: 'Outfit', sans-serif;
-      gap: 28px;
-    }
-
-    /* ── Logo ── */
-    .brand-logo {
-      height: 45px;
-      width: auto;
-      /* align-self: flex-start; */
-      margin-bottom: 8px;
-    }
-
-    /* ── Image card ── */
-    .card {
-      width: 100%;
-      max-width: 480px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06),
-        0 8px 32px rgba(0,0,0,0.55),
-        0 0 60px rgba(220,90,140,0.07);
-      background: #1a1917;
-    }
-
-    #randomImage {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 18px;
-      animation: fadeIn 0.45s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    /* ── Buttons ── */
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      max-width: 480px;
-    }
-
-    /* Primary — new fact */
-    #newFactBtn {
-      width: 100%;
-      padding: 17px 24px;
-      font-family: 'Playpen Sans', cursive;
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      background: #b3b934;
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.12s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(216,90,138,0.4), 0 2px 6px rgba(0,0,0,0.4);
-    }
-
-  /* Before — pink on hover, breaks on mobile */
-#newFactBtn:hover {
-  background: #c4c43b;
-  box-shadow: 0 6px 28px rgba(216,90,138,0.55), 0 2px 8px rgba(0,0,0,0.4);
-}
-
-/* After — only applies hover style on real pointer devices (mouse/trackpad) */
-@media (hover: hover) {
-  #newFactBtn:hover {
-    background: #c4c43b;
-    box-shadow: 0 6px 28px rgba(179,185,52,0.45), 0 2px 8px rgba(0,0,0,0.4);
-  }
-}
-
-    #newFactBtn:active {
-      transform: scale(0.96);
-      background: #a3a331;
-      box-shadow: 0 2px 10px rgba(216,90,138,0.25);
-    }
-
-    /* Secondary — view all facts on instagram */
-    #instagramBtn {
-      width: 100%;
-      padding: 15px 24px;
-      font-family: 'Playpen Sans', cursive;
-      font-size: 17px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      background: transparent;
-      color: rgba(255,255,255,0.5);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      border-radius: 50px;
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, transform 0.12s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    #instagramBtn:hover {
-      border-color: rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.85);
-    }
-
-    #instagramBtn:active {
-      transform: scale(0.97);
-    }
-
-    #instagramBtn svg {
-      width: 17px;
-      height: 17px;
-      flex-shrink: 0;
-    }
-
-    /* ── Desktop ── */
-    @media (min-width: 600px) {
-      .button-container { flex-direction: row; }
-      #newFactBtn, #instagramBtn { width: auto; flex: 1; }
-    }
+    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+           background: #fff; color: #6f6a6c; font: 16px/1.5 system-ui, sans-serif; }
+    a { color: #1a1a1a; }
   </style>
 </head>
 <body>
-
-  <!--
-    Replace the src below with the actual path to your logo file in the repo.
-    If your logo file is called "logo.png" and sits in the root folder,
-    src="logo.png" is all you need.
-  -->
-  <img
-    class="brand-logo"
-    src="logo.png"
-    alt="fact.o.frame by hinal shah"
-  />
-
-  <div class="card">
-    <img id="randomImage" alt="Illustrated Fact" />
-  </div>
-
-  <div class="button-container">
-    <button id="newFactBtn">new fact</button>
-    <button id="instagramBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
-      </svg>
-      view all on instagram
-    </button>
-  </div>
-
-  <script src="script.js"></script>
+  <p>Opening <a href="https://factoframe.vercel.app/">fact.o.frame</a>…</p>
 </body>
 </html>
